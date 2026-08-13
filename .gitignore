@@ -1,0 +1,18 @@
+# --- Local Supabase config (contains your project's real URL/key) ---
+config.js
+
+# --- OS junk files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Logs ---
+*.log
+
+# --- Node (only relevant if you ever add a build step / npm packages) ---
+node_modules/
