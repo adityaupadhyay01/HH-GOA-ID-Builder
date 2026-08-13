@@ -27,18 +27,6 @@ create policy "Anon can insert builder cards"
   to anon
   with check (true);
 
--- No SELECT / UPDATE / DELETE policy is created for `anon`, so by default
--- the browser cannot read, edit, or delete rows — insert-only from the client.
--- Read the data from the Supabase dashboard or with the service_role key
--- from a trusted backend/admin context only.
-
--- ---------------------------------------------------------------------
--- 2. STORAGE BUCKET: builder-cards
--- Create the bucket from the dashboard (Storage → New bucket) named
--- "builder-cards" and mark it PUBLIC if you want shareable image URLs,
--- then apply the policies below. (Buckets can't be created via plain SQL.)
--- ---------------------------------------------------------------------
-
 -- Allow anonymous uploads into the builder-cards bucket only.
 create policy "Anon can upload to builder-cards"
   on storage.objects
