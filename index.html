@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HH Goa 2026 — Builder ID Generator</title>
+<meta name="description" content="Generate your HH Goa 2026 Builder ID — a premium digital badge for hackers, makers and shippers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ============ STAGE 1: FULL-SCREEN INTRO ============ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Enter the Builder ID generator">
+  <img class="intro__beach" id="introBeach" src="assets/images/goa-beach.jpg" alt="" aria-hidden="true">
+  <div class="intro__scrim" aria-hidden="true"></div>
+  <div class="intro__grain" aria-hidden="true"></div>
+
+  <div class="intro__content">
+    <div class="intro__logo-wrap" id="introLogoWrap">
+      <img class="intro__logo" id="introLogo" src="assets/branding/hh-goa-lockup.png" alt="Hacker House Goa" width="1681" height="343">
+    </div>
+  </div>
+
+  <img class="intro__mark" id="introMark" src="assets/branding/2-47.svg" alt="" aria-hidden="true" width="546" height="335">
+
+  <div class="intro__blob intro__blob--pink" aria-hidden="true"></div>
+  <div class="intro__blob intro__blob--yellow" aria-hidden="true"></div>
+
+  <div class="intro__wipe" id="introWipe" aria-hidden="true"></div>
+</div>
+
+<main class="layout" id="layout">
+
+  <!-- ============ WORKSTATION HEAD ============ -->
+  <div class="deck-strip" aria-hidden="true">
+    <span class="deck-strip__seg">BUILDER ID GENERATOR</span>
+    <span class="deck-strip__seg deck-strip__seg--dot">OFFICIAL TEMPLATE</span>
+    <span class="deck-strip__seg">999 × 1574</span>
+    <span class="deck-strip__seg deck-strip__seg--red">HH GOA 2026</span>
+  </div>
+
+  <!-- ============ WORKFLOW COLUMN ============ -->
+  <section class="workflow" aria-label="Build your ID">
+
+    <!-- 01 — PHOTO -->
+    <div class="panel" id="photo-step">
+      <div class="panel__head">
+        <span class="panel__num">01</span>
+        <h2 class="panel__title">Your Photo</h2>
+        <span class="panel__rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload your photo">
+        <input type="file" id="photoInput" accept="image/png, image/jpeg, image/jpg, image/webp, image/heic" hidden>
+        <div class="dropzone__empty" id="dropzoneEmpty">
+          <span class="dropzone__icon">＋</span>
+          <span class="dropzone__text">TAP TO UPLOAD</span>
+          <span class="dropzone__hint">JPG · PNG · WEBP — any orientation</span>
+        </div>
+        <div class="dropzone__filled" id="dropzoneFilled" hidden>
+          <span class="dropzone__filled-text">PHOTO LOADED</span>
+          <button type="button" class="dropzone__replace" id="replacePhotoBtn">Replace</button>
+        </div>
+      </div>
+
+      <div class="photo-controls" id="photoControls" hidden>
+        <span class="photo-controls__hint">Drag the badge photo to reposition · pinch or use slider to zoom</span>
+        <input type="range" id="zoomSlider" class="zoom-slider" min="100" max="250" value="100" step="1" aria-label="Zoom photo">
+      </div>
+    </div>
+
+    <!-- 02 — NAME -->
+    <div class="panel" id="name-step">
+      <div class="panel__head">
+        <span class="panel__num">02</span>
+        <h2 class="panel__title">Your Name</h2>
+        <span class="panel__rule" aria-hidden="true"></span>
+      </div>
+      <input type="text" id="nameInput" class="text-input" placeholder="your good name" maxlength="40" autocomplete="off">
+      <input type="text" id="teamNameInput" class="text-input text-input--custom" placeholder="Team name (optional)" maxlength="30" autocomplete="off">
+    </div>
+
+    <!-- 03 — STACK -->
+    <div class="panel" id="stack-step">
+      <div class="panel__head">
+        <span class="panel__num">03</span>
+        <h2 class="panel__title">What Do You Build?</h2>
+        <span class="panel__rule" aria-hidden="true"></span>
+      </div>
+      <div class="chip-grid" id="chipGrid" role="group" aria-label="Select your stack">
+        <button type="button" class="chip" data-tag="HTML">HTML</button>
+        <button type="button" class="chip" data-tag="CSS">CSS</button>
+        <button type="button" class="chip" data-tag="JavaScript">JAVASCRIPT</button>
+        <button type="button" class="chip" data-tag="React">REACT</button>
+        <button type="button" class="chip" data-tag="Python">PYTHON</button>
+        <button type="button" class="chip" data-tag="AI / ML">AI / ML</button>
+        <button type="button" class="chip" data-tag="C++">C++</button>
+        <button type="button" class="chip" data-tag="Java">JAVA</button>
+        <button type="button" class="chip" data-tag="Node.js">NODE.JS</button>
+        <button type="button" class="chip" data-tag="Next.js">NEXT.JS</button>
+        <button type="button" class="chip" data-tag="Flutter">FLUTTER</button>
+        <button type="button" class="chip" data-tag="Designer">DESIGNER</button>
+        <button type="button" class="chip" data-tag="Product">PRODUCT</button>
+        <button type="button" class="chip" data-tag="Founder">FOUNDER</button>
+      </div>
+      <input type="text" id="customStackInput" class="text-input text-input--custom" placeholder="Custom stack / role (optional)" maxlength="24">
+    </div>
+
+    <!-- 04 — BUILDER CLASS (auto) -->
+    <div class="panel" id="title-step">
+      <div class="panel__head">
+        <span class="panel__num">04</span>
+        <h2 class="panel__title">Your Builder Class</h2>
+        <span class="panel__rule" aria-hidden="true"></span>
+        <span class="panel__auto">AUTO</span>
+      </div>
+      <div class="title-readout" id="titleReadout">THE BUILDER</div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button type="button" class="btn btn--primary" id="downloadBtn">
+        <span>↓ DOWNLOAD ID</span>
+      </button>
+      <button type="button" class="btn btn--secondary" id="shareBtn">
+        <span>SHARE TO X</span>
+      </button>
+      <p class="status-line" id="statusLine" aria-live="polite"></p>
+    </div>
+
+  </section>
+
+  <!-- ============ PREVIEW PANEL ============ -->
+  <aside class="preview-panel" aria-label="Live preview">
+    <div class="preview-panel__inner">
+      <div class="preview-panel__label">
+        <span class="preview-panel__dot" aria-hidden="true"></span>
+        <span>LIVE PREVIEW</span>
+      </div>
+
+      <div class="canvas-frame">
+        <span class="reg-mark reg-mark--tl" aria-hidden="true">+</span>
+        <span class="reg-mark reg-mark--tr" aria-hidden="true">+</span>
+        <span class="reg-mark reg-mark--bl" aria-hidden="true">+</span>
+        <span class="reg-mark reg-mark--br" aria-hidden="true">+</span>
+        <div class="canvas-wrap" id="canvasWrap">
+          <canvas id="cardCanvas" width="999" height="1574"></canvas>
+          <div class="canvas-drag-layer" id="dragLayer"></div>
+        </div>
+      </div>
+
+      <div class="preview-panel__spec">
+        <span>999 × 1574 PX</span>
+        <span>·</span>
+        <span>PNG</span>
+        <span>·</span>
+        <span>RENDERED ON-CANVAS</span>
+      </div>
+    </div>
+  </aside>
+
+</main>
+
+<footer class="page-footer">
+  <span class="page-footer__seg">BUILT FOR HH GOA 2026</span>
+  <span class="page-footer__seg">UNOFFICIAL FAN-MADE BADGE GENERATOR</span>
+</footer>
+
+<!-- Supabase browser client (optional — app works fully offline without it) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+<script src="config.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
